@@ -1,0 +1,89 @@
+%!TEX root = ../main.tex
+\begin{frame}{Vaccine efficacy} 
+\begin{table}[htb]
+            \centering
+            \begin{tabular}{%
+                p{3.2cm} 
+                p{2cm} 
+                p{3.1cm} 
+                P{1.5cm}
+            }
+            \toprule
+            \textbf{Developer} &
+            \textbf{Vaccine Name} &
+            \textbf{Efficacy \%, (95\% CI)} &  
+            %\textbf{Status} & 
+            \textbf{Reference}
+                \\
+                 \midrule
+                \\
+                    Pfizer-BioNTech
+                        & BNT162b2 
+                        & \num{95} (\num{90.3}–\num{97.6})
+                        %& Approved for emergency use in the USA, Mexico, 
+                        % Germany, UK, and other countries
+                        & \cite{Dagan2021} %\cite{vaccine_tracker2020}
+                \\
+                    Gamaleya Institute
+                        & Sputnik V 
+                        & \num{91.6} (\num{85.6}–\num{95.2}) 
+                        %& Early use in Russia. Emergency use Mexico an other 
+                        %countries.
+                        & \cite{Logunov2021}
+                \\
+                    Oxford University-AztraZeneca
+                        & AZD1222
+                        & \num{74.6} (\num{41.6}-\num{88.9}) 
+                        %& Approved for emergency use in the USA, Mexico, 
+                        & \cite{Emary2021}
+                \\
+                    Johnson \& Johnson$^{*}$
+                        & Ad26.COV2.S
+                        & \SI{57}{\percent}, \SI{66}{\percent} or 
+                            \SI{72}{\percent}
+                        %& Approved for emergency use in the USA, Mexico, 
+                        & \cite{johnsonandjohnson}
+                \\
+                    Sinovac Biotech$^{*}$
+                        & CoronaVac
+                        & \SI{50.4}{\percent}
+                       % & Approved in China. Emergency use in Brazil, other 
+                       % countries.
+                        &\cite{vaccine_tracker2020}
+                \\
+            \bottomrule
+            \end{tabular}
+            \caption{
+                Vaccine efficacy of some 
+                of the approved developments for emergency use. 
+                $(^{*})$ No available information about the confidence 
+                intervals.
+            }
+            \label{tbl:vaccine-efficacy-portfolio}
+        \end{table}
+\end{frame}
+%
+% \begin{frame}{Simulation Results}
+%     %TODO: Calculate vaccine dosis price according to CDMX report
+%     \begin{center}
+%         \includegraphics[scale=.65, keepaspectratio]{assets/incidence_fig}
+%     \end{center}
+% \end{frame}
+
+% \begin{frame}{Simulation Results}
+%     \begin{textblock*}{130mm}(-1mm, 5mm)
+%         \only<1>{
+%             \begin{center}
+%                 \includegraphics[scale=.62,
+%                 keepaspectratio]{assets/optimal_signal_fig01.pdf}
+%             \end{center}
+%         }
+%         \only<2>{
+%             \begin{center}
+%                 \includegraphics[scale=.62,
+%                 keepaspectratio]{assets/optimal_signal_fig02.pdf}
+%             \end{center}
+%         }
+%     \end{textblock*}
+% \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

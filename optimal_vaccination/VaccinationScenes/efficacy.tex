@@ -1,0 +1,29 @@
+%!TEX root = ../main.tex
+\begin{frame}{The response of COVID-19 burden due to vaccine efficacy}
+    \begin{textblock*}{127mm}(0mm, 10mm) 
+        \begin{block}{%
+            $
+                (x_{coverage},
+                T, \varepsilon,\delta_{V}^{-1}, \delta_{R}^{-1}):
+            $%
+            \qquad
+            [
+                \SI{50}{\percent},
+                \SI{365}{days},
+                $\star$,
+                \SI{730}{days},
+                \SI{365}{days}
+            ]
+        }
+        \only<1>{
+
+            \includegraphics[width=\textwidth,keepaspectratio]{%
+            assets/efficacy01.png}
+        }
+        \only<2>{
+            \includegraphics[width=\textwidth,keepaspectratio]{%
+            assets/efficacy02.png}
+        }
+        \end{block}
+    \end{textblock*}
+\end{frame}
