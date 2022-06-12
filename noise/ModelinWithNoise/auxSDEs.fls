@@ -1,0 +1,7 @@
+PWD /home/saul/sauld@cimat.mx/UNISON/Ponencias/modelling_and_control_scholl_CIMAT_Nov-2019/Modelling-Simulation-with-SDE/first_day-modelling-with-noise/ModelinWithNoise
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT auxSDEs.tex
+OUTPUT auxSDEs.log
