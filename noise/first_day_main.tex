@@ -1,0 +1,126 @@
+\documentclass[9pt]{beamer}
+\usepackage[sfdefault]{roboto}
+\usepackage{styles/fluxmacros}
+\usefolder{styles}
+\usetheme[style=asphalt]{flux}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{times}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{multimedia}
+\usepackage{hyperref}
+\usepackage{thumbpdf}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{url}
+\usepackage{empheq}
+\usepackage{fancybox}
+\usepackage{esint}
+\usepackage{lipsum}
+\usepackage{listings}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\usepackage{tikz}%
+\usepackage{circuitikz}
+\usepackage{csvsimple}
+\usepackage{pgfplots}
+\usepackage{multimedia}
+\usepackage{media9}
+\usepackage{proba}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{bibunits}
+\usepackage{tcolorbox}
+%\usepackage[texcoord,
+%            grid,
+%            gridunit=mm,
+%            gridcolor=red!60,
+%            subgridcolor=black!60]{eso-pic}
+\usepackage{enumerate}
+\setbeamercovered{transparent}
+%--------------------------------------------------------------------------
+\definecolor{shadecolor}{cmyk}{0,0,0.41,0}
+\definecolor{light-blue}{cmyk}{0.25,0,0,0}
+\newsavebox{\mysaveboxM} % M for math
+\newsavebox{\mysaveboxT} % T for text
+\newcommand*\Garybox[2][Example]{%
+    \sbox{\mysaveboxM}{#2}%
+    \sbox{\mysaveboxT}{\fcolorbox{black}{light-blue}{#1}}%
+    \sbox{\mysaveboxM}{%
+        \parbox[b][\ht\mysaveboxM+.5\ht\mysaveboxT+.5\dp\mysaveboxT][b]{%
+            \wd\mysaveboxM}{#2}%
+    }%
+    \sbox{\mysaveboxM}{%
+        \fcolorbox{black}{shadecolor}{%
+            \makebox[\linewidth-10em]{\usebox{\mysaveboxM}}%
+        }%
+    }%
+    \usebox{\mysaveboxM}%
+    \makebox[0pt][r]{%
+        \makebox[\wd\mysaveboxM][c]{%
+            \raisebox{\ht\mysaveboxM-0.5\ht\mysaveboxT
+                +0.5\dp\mysaveboxT-0.5\fboxrule}{\usebox{\mysaveboxT}}%
+        }%
+    }%
+}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Informations
+\pgfplotstableread[col sep = comma]{./IMAGENES/INTRODUCCION/gbm.csv}\mydata
+\usepackage[makeroom]{cancel}
+\usepackage{epstopdf}
+\epstopdfsetup{outdir=./}
+\mode<presentation>
+{  
+    %\usetheme{PaloAlto}
+    %\usecolortheme[named=kugreen]{structure}
+    \useinnertheme{progressbar}
+    %\usefonttheme{default}
+    %\usefonttheme{serif}
+    %\setbeamercovered{transparent}
+    %\setbeamertemplate{blocks}[rounded][shadow=true]
+    %s\setbeamertemplate{navigation symbols}[only frame symbol]
+}
+   %
+%
+\title{Modelling with SDEs in Biology\\
+    Formulation, Numerical Simulation and Analysis}
+\subtitle{First day: Formaulation of Models with SDEs}
+\author{Saúl Díaz Infante Velasco}
+\institute{CONACYT-UNIVERSIDAD de SONORA, Cimat, Guanajuato Gto}
+\date{\today}
+\titlegraphic{assets/background_image.png}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\defaultbibliography{first_day_main}
+\defaultbibliographystyle{abbrv}
+\begin{document}
+    \titlepage
+    \section{Introduction}
+        \include{Introduction/model_pertrubation}
+    \begin{frame}
+        \frametitle{Table of contents}
+        \tableofcontents
+    \end{frame}
+    \section{Discrete Time Markov Chains (DTMC)}
+        \input{./ModelinWithNoise/noise_effects.tex}
+        \input{./ModelinWithNoise/stochastic_modeling_alternatives.tex}
+        \input{./ModelinWithNoise/dtmc.tex}
+%
+%        
+    \section{Continuous Time Markov Chains (CTMC}
+        \input{./ModelinWithNoise/ctmc.tex}
+    \section{SDEs}
+        \input{./ModelinWithNoise/sdes.tex}
+    \section{Brownian Motion}
+    
+    \section{Poisson Process}
+    \section{Choosing a noise processes}
+    \section{Open Problems}
+\end{document}

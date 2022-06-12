@@ -1,0 +1,178 @@
+%!TEX root = main.tex
+
+\paragraph{Statement of principal finding}
+    This study illustrated the implications of applying 
+combined strategies of lockdown and vaccination to mitigate the curse 
+of COVID-19. Our numerical experiments suggest that a combined and 
+well-balanced policy between the relaxing times of lockdown and 
+vaccine rollout would improve the mitigation of COVID-19 symptomatic 
+prevalence and deaths--but with a delicate balance, 
+with the economic impact. We obtained lockdown policies that modulate the 
+releasing (or holding) of individuals synchronized with and vaccine rollout 
+speed as a strategy to mitigate the symptomatic prevalence. 
+Our policies captured time windows where it is convenient to modify the 
+speed of releasing (or confining) individuals and the rate of vaccine 
+administration according to the symptomatic prevalence. 
+Here we quantify this convenience by computing a cost functional defined 
+by a linear contribution due to the burden of the 
+disease\textemdash quantify in DALYs\textemdash and quadratic cost 
+of the implementation.
+
+\paragraph{Strengths and weakness of the study}
+    %TOPIC SENTENCE
+    \begin{CheckList}{Goal}
+        \Goal{open}{Argument for Strengths}
+            \begin{CheckList}{Task}
+                \Task{done}{Piecewise optimal policies}
+                \Task{done}{Practical}
+                \Task{done}{Modulation between
+                    relaxation and inclusion of 
+                    population in lockdown}
+            \end{CheckList}
+    \end{CheckList}
+
+    \paragraph[]{STRENGTHS}
+	        We got optimal policies that are practical. 
+        Whit practical, we mean those capture actions that can be
+	    implemented in the real world. Because the policies rely on 
+	    piecewise constant values for a given period (here we use 
+	    days), we argue that they are more realistic than policies 
+	    based on measurable functions defined on continuos time.
+        The policies defined on continuos time could implicate
+	    continuous changes of a given action. %
+        For example, it results more realistic to administer a 
+        fixed number of jabs along with a given date than following 
+        a configuration of several doses that would change continuously 
+        on the same date.
+    
+            Besides, we synchronized the trade of between
+        lockdown-release, vaccine-rollout but balancing the 
+        economic cost.
+
+    \paragraph[]{WEAKNESS}
+        \begin{CheckList}{Goal}
+            \Goal{open}{Argument for Weakness}
+                \begin{CheckList}{Task}
+                    \Task{done}{Vaccine Multi-dose.}
+                    \Task{done}{Protection only against severe symptoms.}
+                    \Task{done}{What expect respect 
+                        to the protection against transmission.
+                    }
+                \end{CheckList}
+        \end{CheckList}
+  
+            One limitation was the assumption of only one vaccine. 
+        In almost all countries the vaccination campaigns consider at 
+        least two developments. For example, in Mexico the vaccine portfolio 
+        (at the day of writing) relies on at least four developments. Moreover, 
+        this vaccine portfolio includes developments that differs in the number 
+        of required doses. For example, Pfizers require two doses while Cansino 
+        Bio only demands one.
+        
+            Further, we do not face additional vaccine administration 
+        requirements as the time between doses or logistics\textemdash 
+        each development implies different protocols. Since the approved 
+        vaccine's protective efficacy against transmissions of SARS-CoV2 
+        remains under study, we do not consider this hypothesis in our
+        formulation. We recognize that this parameter would play an 
+        important role, which is plausible to consider in future formulations.
+
+    \paragraph{Strengths and weakness in relation to 
+        other studies, discussing important differences
+        in results
+    }
+    \todo{citations}
+    \paragraph{STRENGTHS}
+        \begin{CheckList}{Goal}
+            \Goal{open}{Argument for Strengths}
+                \begin{CheckList}{Task}
+                    \Task{done}{%
+                        NPI's optimal Policies with non Vaccination
+                        }
+                    \Task{done}{%
+                        and compare our results.}
+                    \Task{done}{What expect respect 
+                        to the protection against transmission.
+                    }
+                    \Task{done}{Optimal Control of Vaccination Rate
+                    cite \cite{Libotte2020} among others  and compare our 
+                    results
+                    }
+                \end{CheckList}
+        \end{CheckList}
+        
+        Works like
+    \cite{Perkins2020,Palmer2020,Djidjou2020,Asamoah2021,Nabi2021} 
+    models NPI's for COVID-19 with optimal control. Some 
+    contribution of this list  combines two or more strategies to
+    mitigate prevalence and deaths due to SARS-CoV-2. 
+    For example, the authors of %
+    \cite{Nabi2021} formulates a fractional ODE to model strategies as public
+    education, treatment, and management of asymptomatic cases.  
+    In \cite{Asamoah2021} Assamoth et al. unfold, an exhaustive analysis
+    of the economic cost related with the combined health protocol of 
+    physical distancing, media advocacy, mask wearing, hand-washing, 
+    lockdown and contact tracing.
+    Similarly, \cite{Djomegni2021,Jiang2020,Ullah2020}
+    reports optimal policies but with significant emphasis on other aspects 
+    related to the spread dynamics of COVID-19. However, the mentioned works 
+    developed guidelines based on continuous-time did not optimize or not 
+    include vaccination. Our contribution complements these contributions 
+    with policies that are piecewise-constant. 
+	    
+	   Here we argue that our policies give a precise sequence of actions that 
+    are feasible for implementation. Further, we calculated the cost and 
+    balanced its performance synchronized and balanced with the economic 
+    implications.
+
+    \paragraph{WEAKNESS: Static optimization }
+        \begin{CheckList}{Goal}
+            \Goal{open}{Argument for Weakness}
+                \begin{CheckList}{Task}
+                    \Task{done}{Allocation.
+                        Comment about optimal allocation as a 
+                        static optimization problem and cite
+                        cite {Bubbar, Buckner, Moore2021}.
+                    }
+                \end{CheckList}
+        \end{CheckList}
+    
+        On the other hand, this work's limitation was the lack of stratification
+    across ages and risk groups. Because DALY's definition depends on this 
+    stratification, and the productive sector of an economy is closely related 
+    to the workforce, we might prioritize accordingly. However, we see that our 
+    result could complement the prioritization policies of relevant works like 
+    \cite{Bubar2021,Matrajt2020a,Buckner2020}. In comparison, optimal vaccine 
+    prioritization strategies answer the question: Who to vaccine first, we 
+    respond when intensifying lockdown (holding) release vaccine rollout. 
+    Thus, our contribution would be complementary.
+
+    \paragraph{Meaning of the study: possible explanations 
+        and implications for clinicians and policymakers}
+
+        New and more contagious variants of SARS-CoV-2 appeared, 
+    and the COVID-19 vaccine supply would be scarce, slow, and 
+    complicated for countries like Mexico. Thus we expect three 
+    synchronized events: another COVID-19 wave, an
+    intensification of the vaccine rollout, and other lockdowns. 
+    Here we argued that the above strategies also must be 
+    synchronized and consider a delicate balance with the 
+    economic impact.
+
+    \paragraph{Unanswered questions and future research}
+        
+        Despite that NPIs have been implemented in most countries to mitigate 
+    COVID-19, these strategies cannot develop immunity. Thus, vaccination 
+    becomes the primary pharmaceutical measure. However, this vaccine has to be 
+    effective and well implemented in global vaccination programs. Each 
+    development implies particular issues--like logistics number of doses, 
+    secondary effects, etc. For example, Mexico is administrating vaccines from 
+    Pfizer-BioNTech, AstraZeneca, CanSino-Bio, and Sputnik V from Russia. 
+    Each of these vaccines implies different requirements for its management, 
+    protects with different efficacies, and differs in its number of doses. 
+    We believe that this complicated landscape has significant implications in 
+    the design of health policies.
+
+        Therefore, we must face new challenges in distribution, stocks, 
+    politics, vaccination efforts, and other uncertainties.          
+    

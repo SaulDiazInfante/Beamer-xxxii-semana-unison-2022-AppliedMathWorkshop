@@ -1,0 +1,138 @@
+\documentclass[9pt]{beamer}
+\usepackage[sfdefault]{roboto}
+\usepackage{styles/fluxmacros}
+\usefolder{styles}
+\usetheme[style=asphalt]{flux}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{times}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{multimedia}
+\usepackage{hyperref}
+\usepackage{thumbpdf}
+\usepackage{%
+    pgf,%
+    pgfarrows,%
+    pgfnodes,%
+    pgfautomata,%
+    pgfheaps,%
+    pgfshade%
+}
+\usepackage{url}
+\usepackage{empheq}
+\usepackage{fancybox}
+\usepackage{esint}
+\usepackage{lipsum}
+\usepackage{listings}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\usepackage{tikz}%
+\usepackage{circuitikz}
+\usepackage{csvsimple}
+\usepackage{pgfplots}
+\usepackage{multimedia}
+\usepackage{proba}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{bibunits}
+\usepackage{tcolorbox}
+\usepackage{qrcode}
+%\usepackage[texcoord,%
+%            grid,%
+%            gridunit=mm,%
+%            gridcolor=red!60,%
+%            subgridcolor=black!60%
+%            ]{eso-pic}
+\usepackage{enumerate}
+\usepackage[makeroom]{cancel}
+\usepackage{epstopdf}
+\usepackage{booktabs}
+\usepackage{calc}
+\usepackage{enumitem}
+\usepackage{algorithmic,algorithm}
+\setbeamercovered{transparent}
+% Informations
+
+\epstopdfsetup{outdir=./}
+\mode<presentation>
+{
+    \useinnertheme{progressbar}
+}
+%\setbeamertemplate{items}[ball]
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Informations
+\defaultbibliography{main}
+%
+\title{\Huge{Maximum likelihood estimation}\\
+    \Huge{
+        \textbf{
+            for a stochastic SEIR system}
+    }
+}
+\subtitle{%
+        \textbf{
+            \textcolor{gray}{
+                 an application of the Grisanov's%
+            }
+       }
+    \\    
+    \textbf{    
+        \textcolor{gray}{
+            Theorem for the likelihood ratio
+        }
+    }    
+    \\
+    \normalsize{March 28, 2022}
+}
+%
+\author{
+    \normalsize{%
+        CONACYT-UNISON-UNAM: FDV, FBL, SDIV
+    }
+}
+%
+\titlegraphic{assets/logo-unison.png}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\input{setup}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\begin{document}
+    \titlepage
+         \section*{Introduction}
+    \part{Modeling with Noise}
+        \section{Modeling with SDEs}
+             \include{noise/Introduction/model_pertrubation}
+        \section{Perturbation of parameters}
+             \input{noise/ModelinWithNoise/noise_effects.tex}
+             \input{noise/ModelinWithNoise/stochastic_modeling_alternatives.tex}
+%             \input{noise/ModelinWithNoise/dtmc.tex}
+%
+%        \section*{Continuous Time Markov Chains (CTMC}
+%             \input{noise/ModelinWithNoise/ctmc.tex}
+%        \section*{SDEs}
+%             \input{noise/ModelinWithNoise/sdes.tex}
+        \begin{frame}
+            \frametitle{Table of contents}
+            \tableofcontents
+        \end{frame}
+        \section{Parameter estimation of SEIR-Covid-19 model based on a SDE}
+	        \input{sto_mle_covid19/sto_mle_problem.tex}
+            \input{sto_mle_covid19/stochastic_model.tex}
+            \input{sto_mle_covid19/mle.tex}
+        \section{Final comments}
+            \input{final_comments.tex} %---------------------------------------------------------------------------
+%    \begin{frame}[allowframebreaks]
+%        \frametitle{Final Remarks}
+%            
+%        % \bibliographystyle{acm}
+%        \bibliography{main.bib}
+%    \end{frame}
+\end{document}

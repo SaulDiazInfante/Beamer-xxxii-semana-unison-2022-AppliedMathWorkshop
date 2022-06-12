@@ -1,0 +1,28 @@
+\documentclass{article}
+
+\usepackage[english]{babel}             
+
+
+\usepackage{pgfplots}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+
+\usetikzlibrary{pgfplots.groupplots}
+\usepgfplotslibrary{external}
+\tikzexternalize[shell escape=-enable-write18] 
+\tikzset{external/system call={pdflatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}}
+
+
+
+\begin{document}
+
+This is a simple test.
+\begin{figure*}[tbh]
+    \centering
+%      \includegraphics[scale=0.7, keepaspectratio]{Diagram_Vaccination_control.pdf}
+\include{DiagramCovidVaccinationModel.tex}
+   \caption{ Compartmental diagram of COVID-19 transmission dynamics that includes
+    optimal vaccination dynamics, penalization and a path constraint}
+    \label{fig:DiagramControl}
+\end{figure*}

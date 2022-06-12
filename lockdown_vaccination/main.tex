@@ -1,0 +1,105 @@
+\documentclass[a4paper,fleqn]{cas-sc}
+%\documentclass[a4paper,fleqn,longmktitle]{cas-sc}
+\usepackage[numbers]{natbib}
+%\usepackage[authoryear]{natbib}
+%\usepackage[authoryear,longnamesfirst]{natbib}
+%\usepackage{titlesec}
+\usepackage{typed-checklist}
+\usepackage{amsmath}
+\usepackage{amssymb}{}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{lineno, hyperref}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage[commandnameprefix=always]{changes}
+\usepackage[section]{placeins}
+\usepackage[]{algorithm,algcompatible,lipsum}
+\usepackage[]{algpseudocode}
+\usepackage{scrextend}
+%\usepackage{changes}
+\usepackage{tikz}
+\modulolinenumbers[1]
+%\definechangesauthor[color=orange]{SDIV}
+\linenumbers
+\graphicspath{{./Figures/}{./figs/}}
+
+\def \tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
+\tsc{WGM}
+\tsc{QE}
+%%%
+
+% Uncomment and use as if needed
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newdefinition{hypotheses}{Hypothesis}
+\newdefinition{assumptions}{Assumptions}
+\newdefinition{rmk}{Remark}
+\newproof{pf}{Proof}
+\newproof{pot}{Proof of Theorem \ref{thm}}
+
+\begin{document}
+\let \WriteBookmarks \relax
+\def \floatpagepagefraction{1}
+\def \textpagefraction{.001}
+
+% Short title
+\shorttitle{Syncronized Locdown-Vaccination
+  Picewise Optimal Policies for COVID-19}
+
+% Short author
+\shortauthors{SDIV DGGS GASV FP}
+
+% Main title of the paper
+\title [mode = title]{Syncronized Locdown-Vaccination
+  Picewise Optimal Policies for COVID-19}
+
+\input{frontmatter}
+% Use if graphical abstract is present
+%\begin{graphicalabstract}
+%\includegraphics{}
+%\end{graphicalabstract}
+% Research highlights
+% Keywords
+% Each keyword is seperated by \sep
+
+%
+\maketitle
+%--------------------------------------------------------------------- Main text
+    \section{Introduction}
+        \input{introduction}
+    \section{Covid-19 spread dynamics}
+        \label{sec:Covid19_spread}
+        \input{model_formulation}
+        \subsection{Parameter calibration}
+          \input{parameters_callibration}
+    \section{Imperfect-preventive COVID-19 vaccination}
+        \label{sec:vaccination_model}
+        \input{vaccination_model}
+    \section{Lockdown-Vaccination reproductive number}
+         \label{sec:reproductive_number}
+         \input{vaccination_r_not}
+    \section{Optimal controlled version}
+         \label{sec:optimal_controlled}
+         \input{cotrolled_version}
+    \section{Numerical Experiments}
+         \label{sec:numerical_experiments}
+         \input{DifferentiaEvolution}
+         \input{simulation}
+    \section{Discussion}
+         \label{sec:discussion}
+         \input{discussion}
+    \section*{Data availability}
+         \input{info_repo}
+    \section*{Authors’ contributions}
+     \input{author_contributions}
+    \section*{Conflicts of interest}
+     The authors have no competing interests.
+%---------------------------To print the credit authorship contribution details
+%-------------------------------------------------------------------printcredits
+\bibliographystyle{model1-num-names}
+\bibliography{NovelCovid19.bib}
+\end{document}
