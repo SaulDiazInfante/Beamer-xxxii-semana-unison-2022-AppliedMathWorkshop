@@ -1,0 +1,256 @@
+\begin{frame}{Stochastic perturbation}
+    \begin{textblock*}{60mm}(10mm, 15mm)
+        Perturbing the above deterministic base by Brownian Motion
+    \end{textblock*}
+%
+    \begin{textblock*}{100mm}(20mm, 30mm)
+        \begin{graybox}{
+                $\mu dt\rightsquigarrow \mu dt + \sigma dW(t)$ gives
+                our SDE SEIR-Covid-19
+        }
+            \begin{equation*}
+                \begin{aligned}
+                    d {S}(t)  =&
+                    \big[\mu - \mu S(t) - f_{\beta} S(t)
+                    +\gamma R(t)  \big] dt 
+                    + \color{orange}{
+                        \sigma \big(1- S(t)\big) dW(t)
+                    }
+                    \\
+                    d {E}(t) =& \big[  f_{\beta} S(t)
+                    - \kappa  E(t) - \mu E(t) \big] dt  
+                    - \color{orange}{
+                        \sigma E(t) dW(t)
+                    }
+                    \\
+                    d {I_a}(t) =& \big[
+                        p \kappa E(t)
+                        -   (\alpha_a +\mu) I_a(t)  \big] dt  
+                        - \color{orange}{
+                            \sigma I_a(t) dW(t)
+                        }
+                    \\
+                    d {I_s}(t) =& \big[
+                        (1 - p) \kappa E (t)
+                        - (\alpha_s +\mu)  I_s(t) \big] dt   
+                        - \color{orange}{
+                            \sigma I_s(t) dW(t)
+                        }
+                    \\
+                    d {R}(t) =&
+                        \big[
+                        \alpha_a I_a(t) +
+                        \alpha_s I_s(t) - (\mu + \gamma) R(t)
+                        \big] dt
+                        - 
+                        \color{orange}{
+                            \sigma R(t) dW(t)
+                        },
+                    \\
+                    & t \in  [0, T] .
+                \end{aligned}
+            \end{equation*}
+        \end{graybox}
+    \end{textblock*}
+\end{frame}
+%------------------------------------------------------------------
+\begin{frame}{Grisanov's likelihood ratio}
+    Let $\mathbb{P}_{\beta, p}$ the law of solution to SDE. We use the
+    following result
+    \footnote{%
+        S\"arkk\"a, Simo;
+        Solin, Arno, Applied stochastic differential
+        equations. Institute of Mathematical Statistics Textbooks,
+        10. Cambridge University Press, Cambridge, 2019. ix+316 pp.
+        ISBN: 978-1-316-64946-6
+    }.%
+    \begin{theorem}%
+        [%
+            {%
+                Likelihood ratio of Itô processes
+                S\"arkk\"a and Solin (2019, Thm. 7.4)%
+            }%
+    ]%
+        Consider the It\^o processes
+        \begin{equation*}
+            \begin{aligned}
+                dx =& f(x, t) + dB_t , \qquad x(0) = x_0,
+                \\
+                dy =& g(y, t) + dB_t, \qquad y(0) = x_0.
+            \end{aligned}
+        \end{equation*}
+%        where $x(t), y(t) \in \mathbb{R}^D$ and the Brownian motion
+%        $B_t \in \mathbb{R}^D$ has no singular diffusion matrix $\mathbf{Q}$.
+        Then the ratio of probability laws of $\mathcal{X}_t$ and
+        $\mathcal{Y}_t$ is given as
+        \begin{equation*}
+            \begin{aligned}
+                \frac{p(\mathcal{X}_t)}{p(\mathcal{Y}_t)} =& Z(t),
+                \\
+                Z(t) =
+                    \exp \Big(
+                        -\frac{1}{2}
+                        &
+                        \int_0^t
+                            [f(y, \tau) - g(y, \tau)]^{\top}
+                            \mathbb{Q}^{-1}
+                            [f(y, \tau) - g(y, \tau)] d \tau
+                        \\
+                        +
+                        &\int_0^t
+                        [f(y, \tau) - g(y, \tau)]^{\top}
+                        \mathbb{Q}^{-1}
+                        d B_{\tau}
+                    \Big)
+            \end{aligned}
+        \end{equation*}
+        in the sense that for an arbitrary functional $h(\cdot)$ of the path
+        from $0$ to $t$,
+        $$
+            \EX{h(\mathcal{X}_t)}{} = \EX{Z(t) h (\mathcal{Y}_t)}{}
+        $$
+    \end{theorem}
+\end{frame}
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------%
+\begin{frame}{The Lamperti transform}
+    Suppose we have the SDE
+    $$
+        dX_t = a(t, X_t) dt + b(X_t) dW_t,
+    $$
+    where the diffusion coefficient depends only on the state variable.
+    Such SDE can transform into one with unitary diffusion by applying the
+    \emph{Lamperti} transform
+    $$
+        Y_t:= F(X_t) = \int_{z} ^ {X_t} \frac{1}{b(u)}du.
+    $$
+    Here $z$ is an arbitrary value and $Y_t$ solves
+    $$
+        d Y_{t} = 
+            \left(
+                \frac{a(t, X_t)}{b(X_t)}
+                - \frac{1}{2} b_x (X_t)
+            \right) dt
+            + dW_t
+    $$
+    The results follows form the It\^{o} formula.
+\end{frame}
+%-------------------------------------------------------------------
+\begin{frame}
+    \begin{textblock*}{80mm}(0mm, 0mm)
+        \begin{graybox}{Using It\^o and Lamperti transformations}
+            \scalebox{.7}{%
+                \parbox{\linewidth}{%
+                    \begin{equation*}
+                        \begin{aligned}
+                            d {S}(t)  =&
+                                \big[
+                                    \mu - \mu S(t) - f_{\beta} S(t)
+                                    + \gamma R(t)
+                                \big] dt +                                                                
+                                \sigma \big(1- S(t)\big) dW(t)
+                            \\
+                            d {E}(t) =&
+                                \big[
+                                    f_{\beta} S(t)
+                                    - \kappa  E(t) - \mu E(t)
+                                \big] dt  - \sigma E(t) dW(t)
+                            \\
+                            d {I_a}(t) =&
+                                \big[
+                                    p \kappa E(t)
+                                    -(\alpha_a +\mu) I_a(t)
+                                \big] dt  - \sigma I_a(t) dW(t)
+                            \\
+                            d {I_s}(t) =&
+                                \big[
+                                    (1 - p) \kappa E (t)
+                                    - (\alpha_s +\mu)  I_s(t)
+                                \big] dt
+                                - \sigma I_s(t) dW(t)
+                        \\
+                            d {R}(t) =&
+                                \big[
+                                    \alpha_a I_a(t) +
+                                    \alpha_s I_s(t) - (\mu + \gamma) R(t)
+                                \big] dt
+                                - \sigma R(t) dW(t),
+                        \\
+                        & t \in  [0, T] .
+                        \end{aligned}%
+                    \end{equation*}
+                }
+            }
+            \tcblower
+            $
+                -\frac{1}{\sigma}
+                d \mathbf{X}_{\beta,p}(t) =
+                F\big(\mathbf{X}_{\beta,p}(t)\big) dt + d\mathbf{W}(t),
+            $
+        \end{graybox}
+    \end{textblock*}
+    %
+    \begin{textblock*}{120mm}(10mm, 50mm)
+        \scalebox{.7}{%
+            \parbox{\linewidth}{%
+    %
+                \begin{equation*}
+                    \mathbf{X}_{\beta,p}(t) :=
+                    \begin{pmatrix}
+                        \log \big(1-S(t)\big)
+                        \\
+                        \log \big(E(t)\big)
+                        \\
+                        \log \big(I_a(t)\big)
+                        \\
+                        \log \big(I_s(t)\big)
+                        \\
+                        \log\big (R(t)\big)
+                    \end{pmatrix},
+                    \quad
+                    F\big(\mathbf{X}_{\beta,p}(t)\big):=
+                    \begin{pmatrix}
+                        \dfrac{\mu}{\sigma } -
+                        \dfrac{f_\beta S(t) }{\sigma \big(1-S(t)\big)}
+                        +
+                        \dfrac{\gamma R(t)}{\sigma \big(1-S(t)\big)}
+                        + \tfrac{1}{2} \sigma
+                        \\
+                        - \dfrac{f_\beta  S(t)  }{\sigma E(t)}
+                        + \dfrac{ \kappa   }{\sigma }
+                        + \dfrac{\mu }{\sigma }
+                        + \dfrac{1}{2} \sigma
+                        \\
+                        - \dfrac{\kappa p E(t)}{\sigma I_a(t)}
+                        + \dfrac{(\alpha_a + \mu )}{\sigma }
+                        + \dfrac{1}{2} \sigma
+                        \\
+                        - \dfrac{\kappa (1-p) E(t)}{\sigma I_s(t)}
+                        + \dfrac{(\alpha_s + \mu )}{\sigma }
+                        + \dfrac{1}{2} \sigma
+                        \\
+                        - \dfrac{\alpha_a I_a(t) +
+                            \alpha_s I_s(t)}{\sigma
+                        R(t)}
+                        + \dfrac{\mu + \gamma}{\sigma }
+                        + \dfrac{1}{2} \sigma
+                    \end{pmatrix},
+                    \quad
+                    d\mathbf{W}(t):=
+                    \begin{pmatrix}
+                        dW(t)
+                        \\
+                        dW(t)
+                        \\
+                        dW(t)
+                        \\
+                        dW(t)
+                        \\
+                        dW(t)
+                    \end{pmatrix} .
+                \end{equation*}
+            }
+        }
+    \end{textblock*}
+\end{frame}
+

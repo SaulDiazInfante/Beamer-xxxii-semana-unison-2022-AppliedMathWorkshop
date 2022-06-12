@@ -1,0 +1,82 @@
+%!TEX root = ../main.tex
+\begin{frame}{Model Scheme}
+    \setlength{\leftmargini}{1mm}
+    %!TEX root = ../main.tex
+        \setlength{\leftmargini}{1mm}
+        \begin{textblock*}{65mm}(5mm, 10mm)
+            \only<1>{
+                \includegraphics[scale=0.125,%
+                    keepaspectratio]{assets/%
+                    SchemeModel_withoutVaccination.png}
+            }
+            \only<2>{
+                \includegraphics[scale=0.125,%
+                    keepaspectratio]{assets/%
+                    SchemeModel_withoutVaccination00.png}
+            }
+            \only<3->{
+                \includegraphics[scale=0.125,%
+                    keepaspectratio]{assets/%
+                    SchemeModel_withoutVaccination01.png}
+            }
+        \end{textblock*}
+%
+    \begin{textblock*}{45mm}(82mm, 55mm)
+        \only<2-4>{
+            \begin{bluebox}{Vaccine Hypotheses}
+                \begin{itemize}
+                    %TODO: change bullet indentation
+                    \item
+                        Imperfect preventive
+                    \item
+                        One dose
+                    \item
+                        Symptomatic exception
+                    \item
+                        Action over susceptible
+                \end{itemize}
+            \end{bluebox}
+        }
+    \end{textblock*}
+    \begin{textblock*}{75mm}(5mm, 65mm)
+    \only<4->{
+        \begin{bluebox}{Notation}
+            \begin{tabular}{rl}
+                $\epsilon$
+                & vaccine efficacy 
+                \\
+                $p$
+                & Generation of symptoms  probability
+                % \\
+                % $u_V(t)$
+                % & Optimal vaccination policy
+            \end{tabular}
+        \end{bluebox}
+        }
+    \end{textblock*}
+%
+    \begin{textblock*}{45mm}(82mm, 50mm)
+        \only<5->{
+            \begin{bluebox}{SAGE objectives}
+                \begin{itemize}
+                    \item
+                        Vaccine profile \\(Efficacy, immunity)
+                    \item
+                        Coverage
+                    \item
+                        Time Horizon
+                \end{itemize}
+                \tcblower
+                \only<6->{
+                    Immunity:
+                    \begin{itemize}
+                        \item
+                            natural (reinfection)
+                        \item
+                            vaccine-induced 
+                    \end{itemize}
+                }
+            \end{bluebox}
+        }
+    \end{textblock*}
+\end{frame}

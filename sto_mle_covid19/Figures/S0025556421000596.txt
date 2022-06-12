@@ -1,0 +1,11 @@
+Manuel Adrian Acuña-Zegarra, Saúl Díaz-Infante, David Baca-Carrasco, Daniel Olmos-Liceaga,
+COVID-19 optimal vaccination policies: A modeling study on efficacy, natural and vaccine-induced immunity responses,
+Mathematical Biosciences,
+Volume 337,
+2021,
+108614,
+ISSN 0025-5564,
+https://doi.org/10.1016/j.mbs.2021.108614.
+(https://www.sciencedirect.com/science/article/pii/S0025556421000596)
+Abstract: About a year into the pandemic, COVID-19 accumulates more than two million deaths worldwide. Despite non-pharmaceutical interventions such as social distance, mask-wearing, and restrictive lockdown, the daily confirmed cases remain growing. Vaccine developments from Pfizer, Moderna, and Gamaleya Institute reach more than 90% efficacy and sustain the vaccination campaigns in multiple countries. However, natural and vaccine-induced immunity responses remain poorly understood. There are great expectations, but the new SARS-CoV-2 variants demand to inquire if the vaccines will be highly protective or induce permanent immunity. Further, in the first quarter of 2021, vaccine supply is scarce. Consequently, some countries that are applying the Pfizer vaccine will delay its second required dose. Likewise, logistic supply, economic and political implications impose a set of grand challenges to develop vaccination policies. Therefore, health decision-makers require tools to evaluate hypothetical scenarios and evaluate admissible responses. Following some of the WHO-SAGE recommendations, we formulate an optimal control problem with mixed constraints to describe vaccination schedules. Our solution identifies vaccination policies that minimize the burden of COVID-19 quantified by the number of disability-adjusted years of life lost. These optimal policies ensure the vaccination coverage of a prescribed population fraction in a given time horizon and preserve hospitalization occupancy below a risk level. We explore “via simulation” plausible scenarios regarding efficacy, coverage, vaccine-induced, and natural immunity. Our simulations suggest that response regarding vaccine-induced immunity and reinfection periods would play a dominant role in mitigating COVID-19.
+Keywords: COVID-19; Optimal control; Vaccination policy; Vaccine profile; Vaccine-induced immunity; Natural immunity; Reinfection; Vaccine efficacy; WHO-SAGE; DALYs
